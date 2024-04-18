@@ -40,7 +40,7 @@ def report_replacer(self, report):
 
     file_name, text = load_test_info(report.nodeid)
     orig_text = text
-    text = [x.strip() for x in text.split('::')]
+    text = [x.strip() for x in text.split('::', 1)]
     parents = []
     if len(text) >= 1:
         parents.extend(text[:-1])
