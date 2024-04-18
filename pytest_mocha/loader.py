@@ -86,7 +86,7 @@ def load_func(module_name, class_name, func_name):
 
 
 def load_test_info(nodeid):
-    data = nodeid.split('::')
+    data = nodeid.split('::', 1)
     file_name = data[0]
     class_name = ''
     func_name = ''
