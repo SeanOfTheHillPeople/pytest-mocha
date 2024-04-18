@@ -86,7 +86,8 @@ def load_func(module_name, class_name, func_name):
 
 
 def load_test_info(nodeid):
-    data = nodeid.split('::')
+    pattern = r"(?<!:):{2}(?!:)" # Split by `::` but not `:::` or `::::`, etc.
+    data = re.split(pattern, nodeid)
     file_name = data[0]
     class_name = ''
     func_name = ''
